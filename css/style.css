@@ -229,6 +229,10 @@ height: 100vh;
 }
 /* start media query  */
 @media only screen and (max-width: 600px) {
+    /* start media into  */
+    .into{
+        height: 100vh;
+    }
 /* media to book */ 
 .book{
 width :100%;
@@ -246,10 +250,20 @@ float: none;
 /* start media to ara box  */
 .into .in-ara {
     padding-top: 0;
-    height: 335px;
+    height: 240px;
+}
+.into .in-ara h1{
+    bottom: 70%;
+}
+.into .in-ara h2{
+    bottom: -100%;
 }
 /* start media letter name */
 .into .lettre-name{
     display: none;
+}
+/* start media btn slide */
+.into .scr-top{
+    bottom: 10%;
 }
 }
