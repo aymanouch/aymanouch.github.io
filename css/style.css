@@ -622,5 +622,27 @@ float: none;
 .into .scr-top{
     bottom: 10%;
 }
+/* start media of the navbar  */
+#navbar{
+    width: 100%;
+    left:-100%;
+}
+/* start media of header */
+header{
+    height: 200vh;
+}
+#home .left-box h1 {
+    font-size: 64px;
+}
+#home .left-box .fr-mok, #home .left-box .ls-mok {
+    width: 90%;
+    top: 5%;
+    left: 5%;
+}
+#home .left-box .dayra {
+    bottom: 25%;
+    left: 80%;
+}
+
 }
 

@@ -132,8 +132,10 @@ $('#navbar ul li').addClass('trans-elt');
     // start move controll 
     elt.parent().eq(0).css('transform', 'translateX(150%)');
     //  start hide nav bar 
+    let win = $(window).width();
+    let leftWin = win < 765 ? '-100%' : '-25%';
     elt.parents().eq(1).animate({
-      left : '-25%'
+      left : leftWin
     });
     elt.removeClass('close').addClass('open');
 
