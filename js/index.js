@@ -68,10 +68,10 @@ contLetter.find('div').eq(0).animate({
   }, 2000, function () {
     contLetter.find('div').eq(2).animate({
     height:'100%'
-    }, 2000, function () {
+    }, 1000, function () {
       contLetter.find('div').eq(3).animate({
         width:'100%'
-      }, 2000)
+      }, 1000)
     });
   });
 });
@@ -81,20 +81,128 @@ contLetter.find('div').eq(0).animate({
 araH1 = $('.into .in-ara h1');
   var myTimer = setTimeout(moveFade(araH1), 6000);
   // small title
-
-const moveFade2 = (elt) => {
+let win = $(window).width(),
+bottomPos = win > 600 ? 30 : 50;
+const moveFade2 = (elt, bottomPos) => {
   elt.animate({
-    bottom:'30%'
+    bottom: bottomPos + '%'
   }, 2000);
 
 },
 araH2 = $('.into .in-ara h2');
-  var myTimer2 = setTimeout(moveFade2(araH2), 12000);
+  var myTimer2 = setTimeout(moveFade2(araH2, bottomPos), 12000);
   clearTimeout(myTimer);
 clearTimeout(myTimer2);
 
+// start preparate nav icon
+const iconMove = (elt) => {
+  if (elt.hasClass('open')) {
+    // start rotate the icon 
+    elt.find('span').eq(2).css('display', 'none').siblings('span').css({
+      position:'absolute',
+      marginBottom: '0',
+      backgroundColor: '#fff'
+    }).animate({
+      top: '50%',
+    }, 1000);
+    elt.find('span').eq(0).css('transform', 'translate(0, -50%) rotate(-45deg)');
+    elt.find('span').eq(1).css('transform', 'translate(0, -50%) rotate(45deg)');
+    elt.removeClass('open').addClass('close');
+    // start move controll 
+    elt.parent().eq(0).css('transform', 'translateX(0)');
+    // start show nav bar 
+    elt.parents().eq(1).animate({
+      left : '0'
+    }, 1000);
+// start add class tarns-elt 
+$('#navbar ul li').addClass('trans-elt');
 
+  } else if (elt.hasClass('close')) {
+    elt.find('span').eq(0).css('transform', 'translate(0, 0) rotate(0deg)');
+    elt.find('span').eq(1).css('transform', 'translate(0, 0) rotate(0deg)');
+    elt.find('span').eq(2).siblings('span').css({
+      position:'static',
+      marginBottom: '20%',
+      backgroundColor:'#000'
+    }).animate({
+      top: '0',
+    }, 1000, function() {
+      $(this).siblings('span:last-child').css('display', 'block');
+    })
+    // start move controll 
+    elt.parent().eq(0).css('transform', 'translateX(150%)');
+    //  start hide nav bar 
+    elt.parents().eq(1).animate({
+      left : '-25%'
+    });
+    elt.removeClass('close').addClass('open');
 
+     // start remove class tarns-elt 
+$('#navbar ul li').removeClass('trans-elt');
+  }
+ return 0;
+}
+// appelle de function
+$('#navbar .control .icon').on('click', function () {
+  iconMove($('#navbar .control .icon'));
+});
+
+// start generation the scroll effect 
+const wind = $(window);
+wind.on('scroll', function () {
+  let scrWiTo = $(this).scrollTop();
+  if (scrWiTo >= $('#home').offset().top && scrWiTo < $('#about').offset().top) {
+    $('#navbar ul li').eq(0).addClass('active').siblings().removeClass('active');
+    } else if (scrWiTo >= $('#about').offset().top && scrWiTo < $('#servies').offset().top) {
+      $('#navbar ul li').eq(1).addClass('active').siblings().removeClass('active');
+  } else if (scrWiTo >= $('#servies').offset().top && scrWiTo < $('#skills').offset().top) {
+    $('#navbar ul li').eq(2).addClass('active').siblings().removeClass('active');
+  } else if (scrWiTo >= $('#skills').offset().top && scrWiTo < $('#work').offset().top) {
+    $('#navbar ul li').eq(3).addClass('active').siblings().removeClass('active');
+  } else if (scrWiTo >= $('#work').offset().top && scrWiTo < $('#contact').offset().top) {
+    $('#navbar ul li').eq(4).addClass('active').siblings().removeClass('active');
+  } else if (scrWiTo >= $('#contact').offset().top) {
+    $('#navbar ul li').eq(5).addClass('active').siblings().removeClass('active');
+  }
+});
+
+// start scroll to element with navbar 
+$('#navbar ul li a').on('click', function () {
+$('html, body').animate({
+scrollTop : $('#' + $(this).attr('data-scr')).offset().top + .4
+}, 1000, function () {
+ const eltIcon = $('#navbar .control .icon');
+ if (eltIcon.hasClass('close')) {
+  iconMove(eltIcon);
+ } 
+});
+
+});
+// start small slider in home section 
+const slidHome = (elt, elt1) =>{
+      let i = 0;
+     for (i=0; i < elt.length; i++) {
+       if (elt.eq(i).hasClass('fade-box')) {
+          elt.eq(i).siblings().animate({
+            opacity: 0
+          }, 200, function() {
+            $(this).addClass('fade-box');
+          });
+          elt.eq(i).animate({
+            opacity: 1
+          }, 200, function () {
+            $(this).removeClass('fade-box');
+          });
+          elt1.eq(i).addClass('acitve-d').siblings().removeClass('acitve-d');
+       }
+     }
+}
+$('#home .left-box .dayra span').on('click', function () {
+  slidHome($('#home .left-box .mok'), $('#home .left-box .dayra span'));
+});
+slideHo= setInterval(function () {
+  slidHome($('#home .left-box .mok'), $('#home .left-box .dayra span'));
+}, 7000);
 
 
 
