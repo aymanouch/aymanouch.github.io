@@ -25,6 +25,11 @@ body{
 .active a{
     font-size:25px !important;
     }
+.overly{
+    width: 100%;
+    height:100%;
+    background: #00364b5e;
+}
 
 /* ++++++++++++++++++++++++ !!!! font !!!!++++++++++++++++++++++++++++++++++++
 font-family: 'Play', sans-serif;
@@ -365,7 +370,7 @@ height: 100vh;
 }
 #home .left-box .dayra span.acitve-d {
     background: none;
-    border: 3px solid #05aef0;
+    border: 3px solid #00729f;
 }
 #home .left-box h1{
     font-family: 'Merienda', cursive;
@@ -425,60 +430,163 @@ height: 100vh;
     background-image: url(img/ayman2.jpg);
     background-size: cover;
     background-attachment: fixed;
+    position: relative;
+}
+#home .right-box div.wraper{
+    position: absolute;
+    width: 80%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+}
+#home .right-box div.wraper .our{
+    width:33.33%;
+    float: left;
+    text-align: center;
+}
+#home .right-box div.wraper .our span {
+    display: block;
+    font-family: 'Rajdhani', sans-serif;
+    color:#fff;
+    letter-spacing: 3px;
+    font-weight: lighter;
+    text-transform:uppercase;
+    font-size:24px;
 }
 
-/* start prepartion box left and right */
-
-/* start section about  */
-section h1 {
-    margin-top: 0;
-}
-#about{
+/* global section  */
+section{
     width: 100%;
     height: 100vh;
+    padding-top:32px;
 }
-#about div{
-    width: 50%;
-    height:100vh;
+section span.about-span{
+    color: rgb(145, 145, 145);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 32px;
+    letter-spacing: 4px;
+
+    
+}
+section h1 {
+    font-family: 'Merienda', cursive;
+    margin-bottom: 40px;
+}
+/* start section about  */
+#about p{
+    color: #918d8d;
+    font-size: 16px;
+    font-family: 'Signika', sans-serif;
+    font-weight: lighter;
+    word-spacing: 2px;
+    line-height: 30px;
+}
+#about p:last-of-type{
+    margin-bottom: 56px;
+}
+#about p strong{
+    color: #636161;
+}
+#about .wrapper-card{
+    display: flex;
+    justify-content: center;
+
+}
+#about .wrapper-card .card{
+    width: 14.25%;
+    padding: 1.2em;
+    height: 150px;
+    margin-right: 5%;
+    box-shadow: 0 0 56px -8px rgba(0,0,0,.17);
+    position:relative;
+}
+#about .wrapper-card .card .ions, span{
+    display: block
+}
+#about .wrapper-card .card .ions{
+    position:absolute;
+    top: 20%;
+    left: 15%;
+    font-size: 35px;
+    color: #48b7e2;
+}
+#about .wrapper-card .card span{
+    position:absolute;
+    top: 65%;
+    left: 15%;
+    font-family: 'Signika', sans-serif;
+    text-transform: capitalize;
+    
+}
+#about .wrapper-card .card:first-child{
+    border-bottom:2px solid #48b7e2;
+}
+#about .wrapper-card .card:nth-of-type(2){
+    border-bottom:2px solid #7c48e2;
+}
+#about .wrapper-card .card:nth-of-type(3){
+    border-bottom:2px solid #48e2b0;
+}
+#about .wrapper-card .card:last-of-type{
+    margin-right:0;
+    border-bottom:2px solid #e2486c;
+}
+#about .wrapper-card .card:first-child .inos{
+    color:#48b7e2;
+}
+#about .wrapper-card .card:nth-of-type(2) .ions{
+    color: #7c48e2;
+}
+#about .wrapper-card .card:nth-of-type(3) .ions{
+    color:#48e2b0;
+}
+#about .wrapper-card .card:last-of-type .ions{
+    color: #e2486c;
 }
 /* start section servies  */
 #servies{
     width: 100%;
     height: 100vh;
 }
-#servies div{
-    width: 50%;
-    height:100vh;
-}
 /* start section skills */
 #skills{
     width: 100%;
     height: 100vh;
 }
-#skills div{
-    width: 50%;
-    height:100vh;
-}
+
 /* start section work  */
 #work{
     width: 100%;
     height: 100vh;
 }
-#work div{
-    width: 50%;
-    height:100vh;
+/* start footer in geniral */
+footer{
+    width: 100%;
+    height: 100vh;
+    padding-top:32px;
+}
+footer span.about-span{
+    color: rgb(145, 145, 145);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 32px;
+    letter-spacing: 4px;
+
+    
+}
+footer h1 {
+    font-family: 'Merienda', cursive;
+    margin-bottom: 40px;
 }
 /* start section Contact  */
 #contact{
     width: 100%;
     height: 100vh;
 }
-#contact div{
-    width: 50%;
-    height:100vh;
-}
-
-
 
 
 
@@ -643,6 +751,23 @@ header{
     bottom: 25%;
     left: 80%;
 }
+#home .right-box div.wraper .our {
+    width: 100%;
+    float: none;
+    margin-bottom: 20px;
+}
+/* start media to about section  */
+#about{
+height:auto;
+}
+#about .wrapper-card{
+   display: block;
 
+    }
+#about .wrapper-card .card{
+   width: 100%;
+   margin: 0 0 16px 0;
+   
+    }
 }
 

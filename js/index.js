@@ -153,6 +153,18 @@ $('#navbar .control .icon').on('click', function () {
 const wind = $(window);
 wind.on('scroll', function () {
   let scrWiTo = $(this).scrollTop();
+  // effect right box in home 
+const ar1 = 10,
+ar2 = 3,
+ar3 = 0,
+boxContent1 = $('#home .right-box div.wraper .our').eq(0).find('span').eq(1),
+boxContent2 = $('#home .right-box div.wraper .our').eq(1).find('span').eq(1),
+boxContent3 = $('#home .right-box div.wraper .our').eq(2).find('span').eq(1);
+myAddNum = setInterval(function () {
+  addNum(ar1, boxContent1);
+  addNum(ar2, boxContent2);
+  addNum(ar3, boxContent3);
+}, 1000);
   if (scrWiTo >= $('#home').offset().top && scrWiTo < $('#about').offset().top) {
     $('#navbar ul li').eq(0).addClass('active').siblings().removeClass('active');
     } else if (scrWiTo >= $('#about').offset().top && scrWiTo < $('#servies').offset().top) {
@@ -170,14 +182,13 @@ wind.on('scroll', function () {
 
 // start scroll to element with navbar 
 $('#navbar ul li a').on('click', function () {
+const eltIcon = $('#navbar .control .icon');
+  if (eltIcon.hasClass('close')) {
+   iconMove(eltIcon);
+  } 
 $('html, body').animate({
 scrollTop : $('#' + $(this).attr('data-scr')).offset().top + .4
-}, 1000, function () {
- const eltIcon = $('#navbar .control .icon');
- if (eltIcon.hasClass('close')) {
-  iconMove(eltIcon);
- } 
-});
+}, 1000);
 
 });
 // start small slider in home section 
@@ -206,8 +217,14 @@ slideHo= setInterval(function () {
   slidHome($('#home .left-box .mok'), $('#home .left-box .dayra span'));
 }, 7000);
 
-
-
+// declaration of function 
+const addNum =  (ar, boxContent) => {
+if(Number(boxContent.text()) < ar) {
+ boxContent.text(Number(boxContent.text()) + 1);
+} else {
+  clearInterval(myAddNum);
+}      
+};
 
 
 
