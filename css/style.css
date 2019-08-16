@@ -30,7 +30,10 @@ body{
     height:100%;
     background: #00364b5e;
 }
-
+.jboch{
+ transform:translate(-5%, 0);
+ opacity: 0;
+}
 /* ++++++++++++++++++++++++ !!!! font !!!!++++++++++++++++++++++++++++++++++++
 font-family: 'Play', sans-serif;
 font-family: 'Signika', sans-serif;
@@ -459,7 +462,7 @@ height: 100vh;
 section{
     width: 100%;
     height: 100vh;
-    padding-top:32px;
+    padding-top:72px;
 }
 section span.about-span{
     color: rgb(145, 145, 145);
@@ -468,12 +471,14 @@ section span.about-span{
     display: block;
     margin-bottom: 32px;
     letter-spacing: 4px;
+    transition: all 2s ease;
 
     
 }
 section h1 {
     font-family: 'Merienda', cursive;
     margin-bottom: 40px;
+    transition: all 2s ease;
 }
 /* start section about  */
 #about p{
@@ -483,6 +488,7 @@ section h1 {
     font-weight: lighter;
     word-spacing: 2px;
     line-height: 30px;
+    transition: all 2s ease;
 }
 #about p:last-of-type{
     margin-bottom: 56px;
@@ -575,12 +581,13 @@ footer span.about-span{
     display: block;
     margin-bottom: 32px;
     letter-spacing: 4px;
-
+    transition:all 2s ease;
     
 }
 footer h1 {
     font-family: 'Merienda', cursive;
     margin-bottom: 40px;
+    transition:all 2s ease;
 }
 /* start section Contact  */
 #contact{

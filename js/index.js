@@ -166,22 +166,49 @@ myAddNum = setInterval(function () {
   addNum(ar3, boxContent3);
 }, 1000);
   if (scrWiTo >= $('#home').offset().top && scrWiTo < $('#about').offset().top) {
+
     $('#navbar ul li').eq(0).addClass('active').siblings().removeClass('active');
+
     } else if (scrWiTo >= $('#about').offset().top && scrWiTo < $('#servies').offset().top) {
       $('#navbar ul li').eq(1).addClass('active').siblings().removeClass('active');
+      // jboch effect 
+      $('#about span.about-span').removeClass('jboch');
+      $('#about').find('h1').removeClass('jboch');
+      $('#about  p').removeClass('jboch');
+      $('#about .wrapper-card').removeClass('jboch');
+      
+
   } else if (scrWiTo >= $('#servies').offset().top && scrWiTo < $('#skills').offset().top) {
+
     $('#navbar ul li').eq(2).addClass('active').siblings().removeClass('active');
+    // jboch effect 
+    $('#servies span.about-span').removeClass('jboch');
+      $('#servies').find('h1').removeClass('jboch');
+
   } else if (scrWiTo >= $('#skills').offset().top && scrWiTo < $('#work').offset().top) {
     $('#navbar ul li').eq(3).addClass('active').siblings().removeClass('active');
+    // jboch effect 
+    $('#skills  span.about-span').removeClass('jboch');
+      $('#skills').find('h1').removeClass('jboch');
+
   } else if (scrWiTo >= $('#work').offset().top && scrWiTo < $('#contact').offset().top) {
     $('#navbar ul li').eq(4).addClass('active').siblings().removeClass('active');
+     // jboch effect 
+     $('#work  span.about-span').removeClass('jboch');
+     $('#work').find('h1').removeClass('jboch');
+
   } else if (scrWiTo >= $('#contact').offset().top) {
     $('#navbar ul li').eq(5).addClass('active').siblings().removeClass('active');
+    // jboch effect 
+    $('#contact  span.about-span').removeClass('jboch');
+    $('#contact').find('h1').removeClass('jboch');
+
   }
 });
 
 // start scroll to element with navbar 
-$('#navbar ul li a').on('click', function () {
+$('#navbar ul li a').on('click', function (e) {
+e.preventDefault();
 const eltIcon = $('#navbar .control .icon');
   if (eltIcon.hasClass('close')) {
    iconMove(eltIcon);
