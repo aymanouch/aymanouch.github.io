@@ -204,6 +204,10 @@ myAddNum = setInterval(function () {
     $('#contact').find('h1').removeClass('jboch');
 
   }
+  if (scrWiTo >= $('#servies .cont-card .cart').offset().top - 100) {
+    $('#servies .cont-card .cart').removeClass('eff-top');
+    $('#servies .cont-card .cart').removeClass('eff-bott');
+  }
 });
 
 // start scroll to element with navbar 
