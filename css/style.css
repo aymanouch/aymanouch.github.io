@@ -626,27 +626,30 @@ section h1 {
     padding: 32px;
 
 }
+#skills .skills-bar h3{
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: lighter
+}
 #skills .skills-bar .content-bar{
     width: 50%;
     float: left;
 }
 #skills .skills-bar .content-bar .bar {
     width: 90%;
-    height: 10px;
+    height: 6px;
     background: #e8e8e8;
     border-radius: 4px;
     position: relative;
 }
 #skills .skills-bar .content-bar  .bar > div{
-   
+   width: 0;
     height: 100%;
     border-radius: 4px;
     position:relative;
     transition: width 1s ease;
 }
 #skills .skills-bar .content-bar:nth-of-type(1)  .bar > div {
-    background: #8bc34a;
-    width: 65%;
+    background: #e248d6;
 }
 #skills .skills-bar .content-bar:nth-of-type(2)  .bar > div {
     background: #2c98f0;
@@ -666,15 +669,15 @@ section h1 {
 #skills .skills-bar .content-bar .bar > div::before{
     position: absolute;
     content: '';
-    right: -8px;
+    right: -6px;
     top: 50%;
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    margin-top:-8px;
+    margin-top: -6px;
 }
 #skills .skills-bar .content-bar:nth-of-type(1)  .bar > div::before {
-    background: #8bc34a;
+    background: #e248d6;
 }
 #skills .skills-bar .content-bar:nth-of-type(2)  .bar > div::before {
     background: #2c98f0;
@@ -697,7 +700,8 @@ section h1 {
     height: 30px;
     top: -40px;
     right: 0%;   
-    line-height: 30px; 
+    line-height: 30px;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 

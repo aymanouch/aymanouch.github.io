@@ -1,5 +1,13 @@
 /*global $, document*/
 $(function () {
+  // nice scroll bar libary start
+      $("body").niceScroll({
+        cursorcolor: "#48b7e2",
+        cursorwidth: "8px",
+        cursorborder: "none",
+        cursorborderradius: "8px"
+      });
+
   // start move cicle
 $('.into').on('mousemove', function (e) {
   let x = e.clientX - 117,
@@ -151,6 +159,7 @@ $('#navbar .control .icon').on('click', function () {
 
 // start generation the scroll effect 
 const wind = $(window);
+let n = 0;
 wind.on('scroll', function () {
   let scrWiTo = $(this).scrollTop();
   // effect right box in home 
@@ -165,6 +174,7 @@ myAddNum = setInterval(function () {
   addNum(ar2, boxContent2);
   addNum(ar3, boxContent3);
 }, 1000);
+// start gere effect move and show heading and box section
   if (scrWiTo >= $('#home').offset().top && scrWiTo < $('#about').offset().top) {
 
     $('#navbar ul li').eq(0).addClass('active').siblings().removeClass('active');
@@ -191,6 +201,17 @@ myAddNum = setInterval(function () {
     $('#skills  span.about-span').removeClass('jboch');
       $('#skills').find('h1').removeClass('jboch');
       $('#skills  p').removeClass('jboch');
+      // start bar skills 
+     
+      for (n = 0; n < $('#skills .skills-bar .content-bar').length; n++) {
+        let widthSkills = $('#skills .skills-bar .content-bar').eq(n).find('.bar > div div').text();
+        $('#skills .skills-bar .content-bar').eq(n).find('.bar > div').animate({
+          width: widthSkills
+        }, 500, function() {
+          break;
+        });
+        
+      }
 
   } else if (scrWiTo >= $('#work').offset().top && scrWiTo < $('#contact').offset().top) {
     $('#navbar ul li').eq(4).addClass('active').siblings().removeClass('active');
