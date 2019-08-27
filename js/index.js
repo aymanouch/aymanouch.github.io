@@ -190,6 +190,7 @@ myAddNum = setInterval(function () {
     // jboch effect 
     $('#skills  span.about-span').removeClass('jboch');
       $('#skills').find('h1').removeClass('jboch');
+      $('#skills  p').removeClass('jboch');
 
   } else if (scrWiTo >= $('#work').offset().top && scrWiTo < $('#contact').offset().top) {
     $('#navbar ul li').eq(4).addClass('active').siblings().removeClass('active');

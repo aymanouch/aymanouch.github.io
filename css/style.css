@@ -612,6 +612,108 @@ section h1 {
     width: 100%;
     height: 100vh;
 }
+#skills  p{
+    color: #918d8d;
+    font-size: 16px;
+    font-family: 'Signika', sans-serif;
+    font-weight: lighter;
+    word-spacing: 2px;
+    line-height: 30px;
+    transition: all 1s ease;
+}
+#skills .skills-bar {
+    overflow:hidden;
+    padding: 32px;
+
+}
+#skills .skills-bar .content-bar{
+    width: 50%;
+    float: left;
+}
+#skills .skills-bar .content-bar .bar {
+    width: 90%;
+    height: 10px;
+    background: #e8e8e8;
+    border-radius: 4px;
+    position: relative;
+}
+#skills .skills-bar .content-bar  .bar > div{
+   
+    height: 100%;
+    border-radius: 4px;
+    position:relative;
+    transition: width 1s ease;
+}
+#skills .skills-bar .content-bar:nth-of-type(1)  .bar > div {
+    background: #8bc34a;
+    width: 65%;
+}
+#skills .skills-bar .content-bar:nth-of-type(2)  .bar > div {
+    background: #2c98f0;
+}
+#skills .skills-bar .content-bar:nth-of-type(3)  .bar > div {
+    background: #9363d1;
+}
+#skills .skills-bar .content-bar:nth-of-type(4)  .bar > div {
+    background: #d163a0;
+}
+#skills .skills-bar .content-bar:nth-of-type(5)  .bar > div {
+    background: #d1bd63;
+}
+#skills .skills-bar .content-bar:nth-of-type(6)  .bar > div {
+    background: #d16363;
+}
+#skills .skills-bar .content-bar .bar > div::before{
+    position: absolute;
+    content: '';
+    right: -8px;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-top:-8px;
+}
+#skills .skills-bar .content-bar:nth-of-type(1)  .bar > div::before {
+    background: #8bc34a;
+}
+#skills .skills-bar .content-bar:nth-of-type(2)  .bar > div::before {
+    background: #2c98f0;
+}
+#skills .skills-bar .content-bar:nth-of-type(3)  .bar > div::before {
+    background: #9363d1;
+}
+#skills .skills-bar .content-bar:nth-of-type(4)  .bar > div::before {
+    background: #d163a0;
+}
+#skills .skills-bar .content-bar:nth-of-type(5)  .bar > div::before {
+    background: #d1bd63;
+}
+#skills .skills-bar .content-bar:nth-of-type(6)  .bar > div::before {
+    background: #d16363;
+}
+#skills .skills-bar .content-bar .bar > div div{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -40px;
+    right: 0%;   
+    line-height: 30px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* start section work  */
 #work{
