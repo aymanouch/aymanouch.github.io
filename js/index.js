@@ -218,6 +218,8 @@ myAddNum = setInterval(function () {
      // jboch effect 
      $('#work  span.about-span').removeClass('jboch');
      $('#work').find('h1').removeClass('jboch');
+     $('#work .ga-left').removeClass('jboch');
+     $('#work .ga-right').removeClass('eff-bott');
 
   } else if (scrWiTo >= $('#contact').offset().top) {
     $('#navbar ul li').eq(5).addClass('active').siblings().removeClass('active');
@@ -279,9 +281,64 @@ if(Number(boxContent.text()) < ar) {
 }      
 };
 
+// start gere gallery 
+const addAcitveimg = (elt, granElt) => {
+   if(!elt.hasClass('acitve-img')) {
+     elt.addClass('active-img').siblings('div').removeClass('active-img');
+     const a = 5;
+     granElt.animate({
+       opacity : 0,
+     }, 500, function () {
+      granElt.attr('src', elt.find('img').attr('src'));
+     });
+     granElt.animate({
+      opacity : 1
+    }, 500);
+    granElt.siblings('.overly-img').find('h3').text(elt.attr('data-info'));
 
+   }
+}, showImage = (elt, clickableElt) => {
+  elt.fadeIn(100);
+  elt.find('.con-img img').attr('src', clickableElt.parents('.overly-img').siblings('img').attr('src'));
 
+}, smalledWidth = (elt, cilcElt) => {
+  if(cilcElt.find('ion-icon').attr('name') === 'contract') {
+    elt.css({
+      margin: 'auto',
+      left : '50%',
+      transform: 'translateX(-50%)'
+    });
+    elt.animate({
+      width: '80%',
+    }, 500);
+    cilcElt.find('ion-icon').attr('name', 'expand');  
+   } else {
+    elt.animate({
+      width: '100%',
+    }, 500);
+    cilcElt.find('ion-icon').attr('name', 'contract'); 
 
+   }
+  
+  }
+  
+
+$('#work .ga-right div').on('click', function () {
+addAcitveimg($(this), $('#work .ga-left div img'));
+});
+// start ger ov-garlly 
+$('.ov-garlly .parameter div:last-child').on('click', function () {
+$('.ov-garlly').fadeOut(200);
+});
+// small ov-garlly
+$('.ov-garlly .parameter div').eq(1).on('click', function () {
+  smalledWidth($('.ov-garlly'), $(this));
+});
+// show ov-garlly
+$('#work .ga-left div .utill div:last-child').on('click', function () {
+   showImage($('.ov-garlly'), $(this));
+
+});
 
 
 });
