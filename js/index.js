@@ -1,13 +1,12 @@
 /*global $, document*/
 $(function () {
   // nice scroll bar libary start
-      $("body").niceScroll({
+      $('body').niceScroll({
         cursorcolor: "#48b7e2",
         cursorwidth: "8px",
         cursorborder: "none",
         cursorborderradius: "8px"
       });
-
   // start move cicle
 $('.into').on('mousemove', function (e) {
   let x = e.clientX - 117,
@@ -157,7 +156,7 @@ $('#navbar .control .icon').on('click', function () {
   iconMove($('#navbar .control .icon'));
 });
 
-// start generation the scroll effect 
+// start generation the SCROLL effect 
 const wind = $(window);
 let n = 0;
 wind.on('scroll', function () {
@@ -202,17 +201,16 @@ myAddNum = setInterval(function () {
       $('#skills').find('h1').removeClass('jboch');
       $('#skills  p').removeClass('jboch');
       // start bar skills 
-     
+     if (n === 0)  {
       for (n = 0; n < $('#skills .skills-bar .content-bar').length; n++) {
         let widthSkills = $('#skills .skills-bar .content-bar').eq(n).find('.bar > div div').text();
         $('#skills .skills-bar .content-bar').eq(n).find('.bar > div').animate({
           width: widthSkills
-        }, 500, function() {
-          break;
-        });
+        }, 500);
         
       }
-
+     }
+  
   } else if (scrWiTo >= $('#work').offset().top && scrWiTo < $('#contact').offset().top) {
     $('#navbar ul li').eq(4).addClass('active').siblings().removeClass('active');
      // jboch effect 
@@ -226,8 +224,9 @@ myAddNum = setInterval(function () {
     // jboch effect 
     $('#contact  span.about-span').removeClass('jboch');
     $('#contact').find('h1').removeClass('jboch');
-
+    $('#contact .book').removeClass('jboch');
   }
+
   if (scrWiTo >= $('#servies .cont-card .cart').offset().top - 100) {
     $('#servies .cont-card .cart').removeClass('eff-top');
     $('#servies .cont-card .cart').removeClass('eff-bott');
@@ -339,6 +338,8 @@ $('#work .ga-left div .utill div:last-child').on('click', function () {
    showImage($('.ov-garlly'), $(this));
 
 });
-
-
+// start preparte contact footer
+$('.right-fo a').hover(function () {
+$('.' + $(this).attr('data-link')).addClass('active-link').siblings('h3').removeClass('active-link');
+});
 });

@@ -45,6 +45,7 @@ body{
 .active-img{
     transform: scale(1.1, 1.1);
 }
+
 /* ++++++++++++++++++++++++ !!!! font !!!!++++++++++++++++++++++++++++++++++++
 font-family: 'Play', sans-serif;
 font-family: 'Signika', sans-serif;
@@ -890,11 +891,71 @@ footer h1 {
     width: 100%;
     height: 100vh;
 }
+#contact .con-foot{
+    overflow: hidden;
+}
+#contact .con-foot .left-fo{
+    height:80vh;
+    transition: all 1s ease;
+    background: url(img/undraw_contact_us_15o2.svg);
+    background-size:100% 100%;
+}
+#contact .con-foot .right-fo{
+    height:80vh;
+    padding: 32px;
+    transition: all 1s ease;
+}
+#contact .con-foot .right-fo h2, #contact .con-foot .right-fo h3{
+    margin-top:0;
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    width:100%;
+}
+#contact .con-foot .right-fo h3{
+    position:absolute;
+    display: none;
+    color: #227dcb;
+}
+#contact .con-foot .right-fo h3.active-link{
+    display: block;
+}
+#contact .con-foot .right-fo .icon-pro, .icon-socia{
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+}
+#contact .con-foot .right-fo .icon-pro a, .icon-socia a{
+    display: inline-block;
+    width:100px;
+    height:60px;
+    font-size: 45px;
+    color: #48b7e2;
+    text-decoration: none;
+    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#contact .con-foot .right-fo .icon-pro a:hover{
+    color: #6c63ff;
+}
+#contact .con-foot .right-fo .icon-socia a:hover{
+    color: #6c63ff;
+}
+#contact .con-foot .right-fo .pro-site, .soci-site {
+    height: 40%;
+}
 
-
-
-
-
+#contact .con-foot .right-fo .pro-site .info-pro, .soci-site .info-soci{
+    position: relative;
+}
+#contact .con-foot .right-fo .copyright{
+    padding-top: 56px;
+    text-align: center;
+    height: 20%;
+    color: #918d8d;
+    font-size: 16px;
+    font-family: 'Signika', sans-serif;
+    font-weight: lighter;
+    word-spacing: 2px;
+}
 
 
 
@@ -1082,6 +1143,60 @@ height:auto;
 #servies .cont-card .cart{
 width: 80%;
 margin:0 auto 16px auto;
+}
+
+/* start skills media  */
+#skills{
+height: auto;
+}
+#skills .skills-bar {
+padding: 16px;
+}
+#skills .skills-bar .content-bar{
+    width:100%;
+    float:none;
+}
+
+/* start work media  */
+#work{
+    height: auto;
+    }
+#work .gallery {
+    height: auto;
+}
+#work .ga-left {
+    padding: 0px;
+    height: 50vh;
+}
+#work .ga-left div .overly-img .utill {
+    padding: 8px 8px 8px 60%;
+}
+#work .ga-right {
+    padding: 16px 0 0 0;
+    height: 20vh;
+}
+/* start media query contact  */
+#contact{
+    height: auto;
+}
+#contact .con-foot .left-fo {
+    height: 50vh;
+}
+#contact .con-foot .right-fo{
+    height: 100vh;
+    padding: 0;
+}
+#contact .con-foot .right-fo .icon-pro, .icon-socia {
+    padding: 0;
+}
+#contact .con-foot .right-fo h2{
+    margin-bottom: 60px;
+}
+#contact .con-foot .right-fo h3.active-link{
+    font-size: 16px;
+}
+#contact .con-foot .right-fo .copyright{
+    padding-top: 16px;
 }
 }
 
