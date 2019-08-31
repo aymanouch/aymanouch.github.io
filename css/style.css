@@ -445,7 +445,6 @@ height: 100vh;
     border: none;
     outline: none;
     padding: 16px;
-    color: #fff;
     font-family: 'Signika', sans-serif;
     font-size: 20px;
     box-shadow: 2px 2px #099ad2;
@@ -467,6 +466,13 @@ height: 100vh;
 }
 #home .left-box .btn:hover:after{
     width: 100%;
+}
+#home .left-box .btn a{
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
 }
 #home .left-box .fr-mok, #home .left-box .ls-mok{
  width: 80%;
